@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %} TechCrunch</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/bulma-divider.min.css" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+    
+      body {
+        font-family: "Nunito", sans-serif;
+      }
+      .navbar {
+        background-color: #292929;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+      }
+      .navbar a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
+      }
+      .navbar a:hover {
+        color: #0062cc;
+      }
+      .navbar .logo {
+        font-weight: bold;
+        font-size: 2rem;
+        color: #ffffff;
+      }
+      .navbar .nav-items {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+      }
+      .navbar .nav-items a {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      .navbar .nav-items .active {
+        color: #0079d3;
+        border-bottom: 2px solid #0079d3;
+        padding-bottom: 2px;
+      }
+      .navbar .nav-items .active:hover {
+        color: #0062cc;
+      }
+
+      .card {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .button {
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .button:hover {
+        background-color: #0079d3;
+        color: #ffffff;
+      }
+
+      .footer {
+        background-color: #292929;
+        color: #ffffff;
+        padding: 2rem 0;
+        border-radius: 8px;
+      }
+      .footer p {
+        font-size: 0.9rem;
+      }
+      .footer strong {
+        font-weight: bold;
+      }
+      .footer a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
+        margin-right: 1rem;
+      }
+      .footer a:hover {
+        color: #0079d3;
+        text-decoration: underline;
+      }
+      .footer strong {
+        font-weight: bold;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <strong>TechCrunch</strong>
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="control has-icons-left">
+                <input
+                  class="input is-rounded"
+                  type="email"
+                  placeholder="Search"
+                />
+                <span class="icon is-left">
+                  <i class="fa fa-search"></i>
+                </span>
+              </div>
+            </div>
+            <a class="navbar-item is-size-5 has-text-weight-semibold">Home</a>
+            <a class="navbar-item is-size-5 has-text-weight-semibold"
+              >Examples</a
+            >
+            <a class="navbar-item is-size-5 has-text-weight-semibold"
+              >Features</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-three-quarters">
+            {% block content %}
+            <!-- Blog content goes here -->
+            {% endblock %}
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <h3 class="title is-4">Getting Started</h3>
+                <p>
+                  Welcome to TechCrunch Blog! Get started by exploring our
+                  latest articles, tutorials, and news. Stay up to date with the
+                  latest technology trends and innovations.
+                </p>
+                <a
+                  href="https://medium.com/@sitammeur"
+                  class="button is-primary is-fullwidth my-3"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>TechCrunch - Blog</strong> by
+          <a href="https://www.linkedin.com/in/sitammeur/">Sitam Meur</a>
+        </p>
+        <div>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
