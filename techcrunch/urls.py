@@ -24,3 +24,8 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('about/',aboutpageview, name='aboutpageview'),
 ]
+
+
+admin.site.site_header = "TechCrunch Admin"
+admin.site.site_title = "Admin"
+admin.site.index_title = "TechCrunch"
