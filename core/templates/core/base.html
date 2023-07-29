@@ -33,12 +33,14 @@
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
+            <form method="get" action="{% url 'search' %}">
             <div class="control has-icons-left">
-              <input class="input is-rounded" type="email" placeholder="Search" />
+              <input class="input is-rounded" name="query" type="text" placeholder="Search" />
               <span class="icon is-left">
                 <i class="fa fa-search"></i>
               </span>
             </div>
+            </form>
           </div>
           <a class="navbar-item is-size-5 has-text-weight-semibold">Home</a>
           <a class="navbar-item is-size-5 has-text-weight-semibold">Examples</a>
