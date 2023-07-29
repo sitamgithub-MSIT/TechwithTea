@@ -6,7 +6,7 @@ from .forms import CommentForm
 
 
 def blogpageview(request, category_slug, slug):
-    post = get_object_or_404(Post, slug=slug)
+    post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
 
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -26,5 +26,6 @@ def blogpageview(request, category_slug, slug):
 
 def categorypageview(request, slug):
     category = get_object_or_404(Category, slug=slug)
+    posts = category.posts.filter(status=Post.ACTIVE)
 
-    return render(request, "blog/categorydetails.html", {"category": category})
+    return render(request, "blog/categorydetails.html", {"category": category, "posts" : posts})

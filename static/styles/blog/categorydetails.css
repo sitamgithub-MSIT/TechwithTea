@@ -47,3 +47,17 @@
     border: 1px solid #ddd;
     margin: 20px 0;
 }
+
+.no-posts {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.no-posts .title {
+    color: #000;
+    font-size: 2rem;
+}

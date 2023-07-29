@@ -8,8 +8,8 @@ class commentInline(admin.TabularInline):
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ["title", "slug", "category", "created_at"]
-    list_filter = ["created_at", "category"]
+    list_display = ["title", "slug", "category", "created_at", "status"]
+    list_filter = ["created_at", "category", "status"]
     search_fields = ["title", "body", "intro"]
     inlines = [commentInline]
     prepopulated_fields = {"slug": ("title",)}
