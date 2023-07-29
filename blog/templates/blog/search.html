@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% block title %} Search | {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/blog/categorydetails.css' %}" />
+</head>
+
+<section class="section">
+    <div class="columns">
+        <div class="column is-10 is-offset-1">
+            <div class="container">
+                <div class="content is-medium">
+                    <h1 class="title is-underline">Search Results</h1>
+                    <h3>Query: "{{ query }}"</h3>
+                </div>
+                {% for post in posts %}
+                <div class="content is-medium">
+                    <a href="{% url 'blogpageview' post.category.slug post.slug %}">
+                        <h2 class="subtitle is-4">
+                            <span class="time-ago">{{ post.created_at | timesince }}</span>
+                            ago
+                        </h2>
+                        <h1 class="title is-underline">{{ post.title }}</h1>
+                        <p>
+                            <q>{{ post.intro }}</q>
+                        </p>
+                    </a>
+                </div>
+                <hr class="blog-separator" />
+                {% empty %}
+
+                <div class="no-posts">
+                    <h1 class="title is-underline">No results for the input query</h1>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
