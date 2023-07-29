@@ -3,10 +3,11 @@ from blog.models import Post
 
 # Create your views here.
 
-def frontpageview(request):
 
+def frontpageview(request):
     posts = Post.objects.all()
-    return render(request, 'core/frontpage.html',{'posts' : posts})
+    return render(request, "core/frontpage.html", {"posts": posts})
+
 
 def aboutpageview(request):
-    return render(request, 'core/about.html')
+    return render(request, "core/about.html")

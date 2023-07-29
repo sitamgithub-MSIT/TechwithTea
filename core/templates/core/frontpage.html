@@ -1,161 +1,20 @@
-{% extends 'core/base.html' %} 
-{% block title %}Home | {% endblock %} 
+{% extends 'core/base.html' %}
+{% block title %}Home | {% endblock %}
 
 {% block content %}
 
+{% load static %}
+
 <head>
-  <style>
-    .hero {
-      background-image: linear-gradient(
-        to bottom,
-        #4158d0 0%,
-        #c850c0 46%,
-        #ffcc70 100%
-      );
-      color: #ffffff;
-      padding: 3rem;
-      text-align: center;
-      border-radius: 10px;
-      height: 280px;
-    }
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/core/frontpage.css' %}" />
 
-    .hero-subtitle,
-    .hero-note {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    }
-
-    .hero-subtitle:hover,
-    .hero-note:hover {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hero-note {
-      transition-delay: 0.1s;
-      color: #ffffff;
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      position: relative;
-      color: black;
-      overflow: hidden;
-      white-space: nowrap;
-      letter-spacing: 0.15em;
-    }
-
-    .hero-intro {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: #ffffff;
-      opacity: 0.7;
-    }
-
-    .hero-link {
-      background-color: #ffffff;
-      color: #00d3c8;
-      border: none;
-      border-radius: 4px;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.25rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    .hero-link:hover {
-      background-color: #ebebeb;
-    }
-
-    .newsletter-hero {
-      background-color: #f7f7f7;
-      padding: 2rem;
-    }
-
-    .newsletter-title {
-      color: #333333;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .newsletter-form {
-      margin-top: 1rem;
-    }
-
-    .newsletter-input {
-      background-color: #ffffff;
-      border: 1px solid #cccccc;
-      border-radius: 4px;
-      padding: 0.5rem;
-      width: 100%;
-    }
-
-    .newsletter-button {
-      background-color: #ff8800;
-      color: #ffffff;
-      border-radius: 4px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-    }
-
-    .newsletter-button:hover {
-      background-color: #e67700;
-    }
-
-    .title.is-underline {
-      text-decoration: underline;
-    }
-
-    .content.is-medium {
-      margin-bottom: 2rem;
-    }
-
-    .subtitle .time-ago {
-      position: relative;
-    }
-
-    .subtitle .time-ago::after {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: transparent;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    .subtitle .time-ago:hover::after {
-      background-color: #000000;
-      animation: underline 0.3s forwards;
-    }
-
-    @keyframes underline {
-      0% {
-        transform: scaleX(0);
-      }
-      100% {
-        transform: scaleX(1);
-      }
-    }
-
-    .blog-separator {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      border: none;
-      border-top: 1px solid #000000;
-    }
-  </style>
 </head>
 
 <section class="hero">
   <div class="container">
-    <h1 class="hero-title"><bold>Welcome to TechCrunch Blog</bold></h1>
+    <h1 class="hero-title">
+      <bold>Welcome to TechCrunch Blog</bold>
+    </h1>
     <p class="hero-intro">
       Stay informed, inspired, and ahead of the curve in the world of
       technology.
@@ -173,19 +32,16 @@
       <div class="container">
         {% for post in posts %}
         <div class="content is-medium">
-          <a href=" {% url 'blogpageview' post.slug %}">
-          <h2 class="subtitle is-4" style="color: #000000; font-weight: bold">
-            <span class="time-ago">{{ post.created_at | timesince }}</span> ago
-          </h2>
-          <h1
-            class="title is-underline"
-            style="color: #000000; font-size: 3rem"
-          >
-            {{ post.title }}
-          </h1>
-          <p style="color: #000000">
-            <q>{{ post.intro }}</q>
-          </p>
+          <a href=" {% url 'blogpageview' post.category.slug post.slug %}">
+            <h2 class="subtitle is-4" style="color: #000000; font-weight: bold">
+              <span class="time-ago">{{ post.created_at | timesince }}</span> ago
+            </h2>
+            <h1 class="title is-underline" style="color: #000000; font-size: 3rem">
+              {{ post.title }}
+            </h1>
+            <p style="color: #000000">
+              <q>{{ post.intro }}</q>
+            </p>
         </div>
         </a>
         <hr class="blog-separator" />
@@ -206,11 +62,7 @@
             <div class="newsletter-form">
               <div class="field has-addons has-addons-centered">
                 <div class="control is-expanded">
-                  <input
-                    class="input newsletter-input"
-                    type="text"
-                    placeholder="Email address"
-                  />
+                  <input class="input newsletter-input" type="text" placeholder="Email address" />
                 </div>
                 <div class="control">
                   <a class="button is-info newsletter-button"> Subscribe </a>
