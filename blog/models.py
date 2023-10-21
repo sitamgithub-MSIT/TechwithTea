@@ -17,7 +17,6 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-
     ACTIVE = "active"
     DRAFT = "draft"
 
