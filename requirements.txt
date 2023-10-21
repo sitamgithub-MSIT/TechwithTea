@@ -10,3 +10,4 @@ colorama==0.4.6
 Django==4.2.2
 django-ckeditor==6.6.1
 django-jazzmin==2.6.0
+python-dotenv==1.0.0
