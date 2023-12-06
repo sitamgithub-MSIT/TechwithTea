@@ -7,6 +7,17 @@ from django.db.models import Q
 
 
 def blogpageview(request, category_slug, slug):
+    """
+    View function for displaying a blog post and handling comments.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        category_slug (str): The slug of the blog post's category.
+        slug (str): The slug of the blog post.
+
+    Returns:
+        HttpResponse: The HTTP response object containing the rendered blog post and comment form.
+    """
     post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
 
     if request.method == "POST":
@@ -26,6 +37,16 @@ def blogpageview(request, category_slug, slug):
 
 
 def categorypageview(request, slug):
+    """
+    View function for rendering the category page.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        slug (str): The slug of the category.
+
+    Returns:
+        HttpResponse: The rendered category details page.
+    """
     category = get_object_or_404(Category, slug=slug)
     posts = category.posts.filter(status=Post.ACTIVE)
 
@@ -35,6 +56,15 @@ def categorypageview(request, slug):
 
 
 def search(request):
+    """
+    View function to handle search functionality.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response object containing the search results.
+    """
     query = request.GET.get("query")
     posts = Post.objects.filter(status=Post.ACTIVE).filter(
         Q(title__icontains=query) | Q(body__icontains=query) | Q(intro__icontains=query)
