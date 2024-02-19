@@ -23,6 +23,12 @@
           </p>
 
           <hr>
+          
+          {% if post.image %}
+            <figure class="image is-16by9">
+              <img src="{{ post.image.url }}" alt="{{ post.image.name }}" class="blog-image" />
+            </figure>
+          {% endif %}
 
           <h2 class="subtitle is-4">
             <span class="time-ago">{{ post.created_at | timesince }}</span> ago

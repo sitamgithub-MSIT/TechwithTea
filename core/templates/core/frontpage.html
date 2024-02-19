@@ -6,8 +6,12 @@
 {% load static %}
 
 <head>
-  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/core/frontpage.css' %}" />
-
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="{% static 'styles/core/frontpage.css' %}"
+  />
 </head>
 
 <section class="hero">
@@ -32,18 +36,37 @@
       <div class="container">
         {% for post in posts %}
         <div class="content is-medium">
-          <a href=" {% url 'blogpageview' post.category.slug post.slug %}">
-            <h2 class="subtitle is-4" style="color: #000000; font-weight: bold">
-              <span class="time-ago">{{ post.created_at | timesince }}</span> ago
+          <a
+            href="{% url 'blogpageview' post.category.slug post.slug %}"
+            title="Read more about {{ post.title }}"
+          >
+            {% if post.image %}
+            <figure class="image is-16by9">
+              <img
+                src="{{ post.image.url }}"
+                alt="{{ post.image.name }}"
+                class="blog-image"
+              />
+            </figure>
+            {% endif %}
+            <h2
+              class="subtitle is-4 subtitle-bold"
+              style="color: #000000; font-size: 1.5rem"
+            >
+              <span class="time-ago">{{ post.created_at | timesince }}</span>
+              ago
             </h2>
-            <h1 class="title is-underline" style="color: #000000; font-size: 3rem">
+            <h1
+              class="title is-underline"
+              style="color: #000000; font-size: 3rem"
+            >
               {{ post.title }}
             </h1>
             <p style="color: #000000">
               <q>{{ post.intro }}</q>
             </p>
+          </a>
         </div>
-        </a>
         <hr class="blog-separator" />
         {% endfor %}
       </div>
@@ -62,7 +85,11 @@
             <div class="newsletter-form">
               <div class="field has-addons has-addons-centered">
                 <div class="control is-expanded">
-                  <input class="input newsletter-input" type="text" placeholder="Email address" />
+                  <input
+                    class="input newsletter-input"
+                    type="text"
+                    placeholder="Email address"
+                  />
                 </div>
                 <div class="control">
                   <a class="button is-info newsletter-button"> Subscribe </a>

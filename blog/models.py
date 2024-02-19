@@ -54,6 +54,7 @@ class Post(models.Model):
     body = RichTextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=CHOICES, default=DRAFT)
+    image = models.ImageField(upload_to="blog-post-images/", blank=True)
 
     class Meta:
         ordering = ("-created_at",)
