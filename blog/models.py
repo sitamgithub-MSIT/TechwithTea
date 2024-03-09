@@ -20,6 +20,9 @@ class Category(models.Model):
         return (
             self.title
         )  # Returns the title of the category as a string representation.
+    
+    def get_absolute_url(self):
+        return '/%s/' % (self.slug)
 
 
 class Post(models.Model):
@@ -61,6 +64,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title  # Returns the title of the post as a string representation.
+    
+    def get_absolute_url(self):
+        return '/%s/%s/' % (self.category.slug, self.slug)
 
 
 class Comment(models.Model):

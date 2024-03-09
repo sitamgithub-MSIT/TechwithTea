@@ -19,14 +19,25 @@ from django.contrib import admin
 from django.urls import include, path
 from core.views import frontpageview, aboutpageview
 
+# Sitemap configuration
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import PostSitemap, CategorySitemap
+
+sitemaps = {
+    "posts": PostSitemap,
+    "categories": CategorySitemap,
+}
+
+# URL patterns
 urlpatterns = [
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}),
     path("admin/", admin.site.urls),
     path("", frontpageview, name="frontpageview"),
-    path("", include("blog.urls")),
     path("about/", aboutpageview, name="aboutpageview"),
+    path("", include("blog.urls")),
 ]
 
-
+# Customizing the admin interface
 admin.site.site_header = "TechCrunch Admin"
 admin.site.site_title = "Admin"
 admin.site.index_title = "TechCrunch"
