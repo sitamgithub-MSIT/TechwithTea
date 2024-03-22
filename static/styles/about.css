@@ -1,0 +1,47 @@
+/* Custom CSS for About Page */
+  
+  .help {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* dark gray */
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    color: #333; /* dark gray */
+  }
+  
+  .has-text-weight-semibold {
+    font-weight: 600;
+  }
+  
+  .has-text-info {
+    color: #3273dc; /* blue */
+  }
+  
+  /* Text Content Styling */
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555; /* dark gray */
+  }
+  
+  /* Link Styling */
+  a {
+    color: #3273dc; /* blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #1d5bbf; /* darker blue on hover */
+  }
+  
+  /* Responsive CSS */
+  @media screen and (max-width: 768px) {
+    .column.is-three-quarters {
+      width: 100%;
+    }
+  }
+  

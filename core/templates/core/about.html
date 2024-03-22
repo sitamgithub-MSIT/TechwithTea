@@ -1,8 +1,48 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base.html' %} 
 {% block title %}About | {% endblock %}
 
-{% block content %}
-    <h1>
-        About Page View
-    </h1>
+{% block content %} 
+
+{% load static %}
+
+<head>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="{% static 'styles/about.css' %}"
+  />
+</head>
+
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-three-quarters">
+      <h1 class="help">About "Tech with Tea"</h1>
+      <p>
+        <strong>"Tech with Tea"</strong> is your gateway to a tech-infused world. Stay informed
+        about the latest tech trends, updates, and insights. Find actionable
+        advice to enhance your tech journey. Explore emerging technologies that
+        are shaping tomorrow's world. Relax and enjoy a cup of tea while delving
+        into enlightening reads. Dive into the blog today to sip on knowledge!😉
+      </p>
+      <br />
+      <h2 class="subtitle">Join the Conversation</h2>
+      <p>
+        Come and be a part of our "Tech with Tea" community – more than just a
+        blog, it's a dynamic digital space where tech enthusiasts gather to
+        share ideas and engage in discussions. Join us for a taste of
+        innovation; dive into the blog today and become a valued member of the
+        conversation! ☕
+      </p>
+      <br />
+      <p>
+        To learn more about the platform powering this blog, visit
+        <a href="https://substack.com" class="has-text-info"
+          ><strong>Substack.com</strong></a
+        >.
+      </p>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
