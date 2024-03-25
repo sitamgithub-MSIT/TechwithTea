@@ -1,122 +1,122 @@
 .title.is-underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .content.is-medium {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .post-body {
-    margin-top: 2rem;
-    color: #333333;
-    font-size: 1.2rem;
-    line-height: 1.6;
+  margin-top: 2rem;
+  color: #333333;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .title.is-underline {
-    text-decoration: underline;
-    color: #000000;
-    font-size: 2rem;
-    font-weight: bold;
+  text-decoration: underline;
+  color: #000000;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .subtitle {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #555555;
-    margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #555555;
+  margin-bottom: 0.5rem;
 }
 
 .time-ago {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .time-ago::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .time-ago:hover::after {
-    background-color: #000000;
-    animation: underline 0.3s forwards;
+  background-color: #000000;
+  animation: underline 0.3s forwards;
 }
 
 @keyframes underline {
-    0% {
-        transform: scaleX(0);
-    }
+  0% {
+    transform: scaleX(0);
+  }
 
-    100% {
-        transform: scaleX(1);
-    }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 textarea.textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 .button.is-link {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .button.is-link:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .comment {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .media-box {
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #007bff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #cbd7f3;
-    max-width: 300px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #cbd7f3;
+  max-width: 300px;
 }
 
 .comment {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .comment p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .comment strong {
-    font-weight: bold;
-    color: #000;
+  font-weight: bold;
+  color: #000;
 }
 
 .comment small {
-    color: #777;
+  color: #777;
 }
