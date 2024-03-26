@@ -35,3 +35,18 @@ def aboutpageview(request):
 
     # Render the about page
     return render(request, "core/about.html")
+
+
+def chatpageview(request):
+    """
+    Renders the chat page.
+
+    Args:
+        request: The HTTP request object.
+
+    Returns:
+        The rendered chat page.
+    """
+
+    # Render the chat page
+    return render(request, "core/chat.html")

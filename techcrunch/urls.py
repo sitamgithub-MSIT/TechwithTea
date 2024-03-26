@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
-from core.views import frontpageview, aboutpageview
+from core.views import frontpageview, aboutpageview, chatpageview
 
 # Sitemap configuration
 from django.contrib.sitemaps.views import sitemap
@@ -34,6 +34,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", frontpageview, name="frontpageview"),
     path("about/", aboutpageview, name="aboutpageview"),
+    path("chat/", chatpageview, name="chatpageview"),
     path("", include("blog.urls")),
 ]
 

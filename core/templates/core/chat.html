@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %} {% endblock %} TechwithTea 🍵</title>
+    <title>{% block title %} {% endblock %} TechSage 🤖</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -15,11 +15,13 @@
       media="screen"
       href="{% static 'styles/base.css' %}"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="../css/bulma-divider.min.css"/> -->
+    <style>
+      /* Ensure iframe container fills entire viewport */
+      #iframe-container {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
 
   <body>
@@ -78,24 +80,16 @@
           <div class="column is-three-quarters">
             {% block content %}
             <!-- Blog content goes here -->
-            {% endblock %}
-          </div>
-          <div class="column">
-            <div class="card">
-              <div class="card-content">
-                <h3 class="title is-4">Getting Started</h3>
-                <p>
-                  Welcome to TechwithTea 🍵! Get started by exploring our latest
-                  articles, tutorials, and news. Stay up to date with the latest
-                  technology trends and innovations.
-                </p>
-                <a
-                  href="https://avirupnandi.substack.com/archive"
-                  class="button is-primary is-fullwidth my-3"
-                  >Read More</a
-                >
-              </div>
+            <div id="iframe-container">
+              <iframe
+                id="iframe"
+                src="https://sitammeur-techsage.hf.space"
+                frameborder="0"
+                width="850"
+                height="450"
+              ></iframe>
             </div>
+            {% endblock %}
           </div>
         </div>
       </div>
@@ -109,5 +103,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="{% static 'js/iframe.js' %}"></script>
   </body>
 </html>
