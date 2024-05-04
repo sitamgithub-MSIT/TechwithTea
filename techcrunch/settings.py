@@ -144,7 +144,10 @@ CLOUDINARY_STORAGE = {
 }
 
 MEDIA_URL = "/media/"
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# Uncomment the following line to use cloudinary for media storage
+# DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 JAZZMIN_SETTINGS = {
     # Welcome text on the login screen
